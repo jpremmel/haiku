@@ -10,8 +10,14 @@ describe ('Haiku', function() {
 });
 
 describe ('countSyllables', function(){
+
   it('should check how many vowels are in a phrase', function(){
     let phrase = "beep boop borp";
      expect(countSyllables(phrase)).toBe(5);
   });
+
+  it("should check how many vowels are in a phrase excluding any e's at the end of a word", function() {
+    let phrase = "her hose is green";
+    expect(countSyllables(phrase)).toBe(5);
+  })
 });

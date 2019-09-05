@@ -16,21 +16,33 @@ export class Haiku {
       }
     }
     if (countSyllables(this.line1) === 5 &&
-               countSyllables(this.line2) === 7 &&
-               countSyllables(this.line3) === 5) {
-                 haiku = true;
+        countSyllables(this.line2) === 7 &&
+        countSyllables(this.line3) === 5) {
+      haiku = true;
     }
     return haiku;
   }
 }
 
-export function countSyllables(phrase) {
+export function countSyllables(inputPhrase) {
+  console.log(inputPhrase);
   const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
   let vowelCount = 0;
   let sylCount = 0;
+
+  let reg = /^[a-zA-Z\ ]/;
+  let phrase = "";
+  for (let k = 0; k < inputPhrase.length; k++) {
+    if (reg.test(inputPhrase[k])) {
+      console.log("WE PASSED THE REGEX CONDITION");
+      phrase += inputPhrase[k];
+    }
+  }
+  console.log(phrase);
+
   for(let i = 0; i < phrase.length; i++ ){
     for(let j = 0; j < vowels.length; j++){
-      if (phrase[i] === vowels[j]){
+      if (phrase[i] === vowels[j] && !(phrase[i].toLowerCase() === "e" && phrase[i+1] === " ")){
         vowelCount++;
       }
     }
