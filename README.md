@@ -9,7 +9,6 @@
 |Behavior| Input| Output|
 | :----: | :----: | :----: |
 |App rejects numerical input| 4| "please enter numbers in word form"|
-|Input must be three lines| blah blah blah blah| "Not a haiku"|
 |Line one must have five syllables | hello my name is sofia| "Not a haiku"|
 |Line two must be seven syllables| this is silly i hate this | "Valid haiku"|
 |Line three must have five syllables| this is the end of this poem| "Not a haiku"|

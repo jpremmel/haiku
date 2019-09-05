@@ -25,7 +25,16 @@ export class Haiku {
 }
 
 export function countSyllables(phrase) {
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let vowelCount = 0;
   let sylCount = 0;
-  //count the syllables in the input phrase
-  return sylCount;
+  for(let i = 0; i < phrase.length; i++ ){
+    for(let j = 0; j < vowels.length; j++){
+      if (phrase[i] === vowels[j]){
+        vowelCount++;
+      }
+    }
+  }
+  console.log(vowelCount);
+  return vowelCount;
 }
